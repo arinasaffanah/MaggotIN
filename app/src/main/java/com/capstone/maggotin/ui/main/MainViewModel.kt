@@ -1,4 +1,4 @@
-package com.capstone.maggotin.ui.home
+package com.capstone.maggotin.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +8,7 @@ import com.capstone.maggotin.data.UserRepository
 import com.capstone.maggotin.data.pref.UserModel
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val repository: UserRepository) : ViewModel() {
+class MainViewModel(private val repository: UserRepository) : ViewModel() {
     fun getSession(): LiveData<UserModel> {
         return repository.getSession().asLiveData()
     }
