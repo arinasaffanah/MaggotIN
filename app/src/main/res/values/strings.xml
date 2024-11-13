@@ -3,8 +3,8 @@
 
     <!--  OnBoard  -->
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_bookmarks">Bookmarks</string>
 
     <!--  Authentication  -->
     <string name="email">Email</string>
@@ -26,4 +26,14 @@
     <string name="name">Name\n</string>
     <string name="title_signup_page">Fill in your data below</string>
     <string name="logout">Logout</string>
+
+    <!--  Camera  -->
+    <string name="gallery">Galeri</string>
+    <string name="analyze">Analyze</string>
+    <string name="camera_x">Camera X</string>
+    <string name="subtitle_camera">Identifikasi pertumbuhan maggot kamu sekarang!</string>
+    <string name="save_bookmark">Save bookmark</string>
+    <string name="brief_desc">Brief description\n</string>
+    <string name="title">Title\n</string>
+    <string name="articles">Yuk, tambah pengetahuan dengan literatur maggot dan pengelolaan sampah yang informatif!</string>
 </resources>
