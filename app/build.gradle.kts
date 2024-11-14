@@ -54,4 +54,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("com.tbuonomo:dotsindicator:4.3")
 }

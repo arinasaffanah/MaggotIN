@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MaggotIN</string>
 
-    <!--  OnBoard  -->
+    <!--  Dashboard  -->
     <string name="title_home">Home</string>
     <string name="title_camera">Camera</string>
     <string name="title_bookmarks">Bookmarks</string>
@@ -34,6 +34,17 @@
     <string name="subtitle_camera">Identifikasi pertumbuhan maggot kamu sekarang!</string>
     <string name="save_bookmark">Save bookmark</string>
     <string name="brief_desc">Brief description\n</string>
-    <string name="title">Title\n</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
     <string name="articles">Yuk, tambah pengetahuan dengan literatur maggot dan pengelolaan sampah yang informatif!</string>
+
+    <!--  Onboarding  -->
+    <string name="onboarding_image">Your Onboarding Image Description</string>
+    <string name="get_started">Get Started</string>
+    <string name="onboarding_title_1">Welcome to MaggotIN!</string>
+    <string name="onboarding_title_2">Identification of Maggot Growth with Photos</string>
+    <string name="onboarding_title_3">Start now!</string>
+    <string name="onboarding_desc_1">Start your journey with MaggotIN that will help you with maggot cultivation every step of the way!</string>
+    <string name="onboarding_desc_2">The image detection feature helps you treat maggots and get immediate treatment recommendations to ensure maggots stay healthy.</string>
+    <string name="onboarding_desc_3">Utilize the MaggotIN feature and start treating your maggots today!</string>
 </resources>
