@@ -30,7 +30,7 @@
     <!--  Camera  -->
     <string name="gallery">Galeri</string>
     <string name="analyze">Analyze</string>
-    <string name="camera_x">Camera X</string>
+    <string name="camera">Camera</string>
     <string name="subtitle_camera">Identifikasi pertumbuhan maggot kamu sekarang!</string>
     <string name="save_bookmark">Save bookmark</string>
     <string name="brief_desc">Brief description\n</string>
