@@ -52,14 +52,14 @@
         android:text="@string/gallery"
         app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cameraXButton" />
+        app:layout_constraintEnd_toStartOf="@+id/cameraButton" />
 
     <Button
-        android:id="@+id/cameraXButton"
+        android:id="@+id/cameraButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="@string/camera_x"
+        android:text="@string/camera"
         app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
         app:layout_constraintStart_toEndOf="@id/galleryButton"
         app:layout_constraintEnd_toEndOf="parent" />
