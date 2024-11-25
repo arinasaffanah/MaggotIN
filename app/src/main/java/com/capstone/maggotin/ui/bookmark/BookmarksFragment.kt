@@ -32,6 +32,18 @@ class BookmarksFragment : Fragment() {
 //        bookmarksViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
+
+        bookmarksViewModel.bookmarkList.observe(viewLifecycleOwner) { bookmarkList ->
+            if (bookmarkList.isEmpty()) {
+                binding.emptyView.visibility = View.VISIBLE
+                binding.rvBookmarkedArticles.visibility = View.GONE
+            } else {
+//                binding.emptyView.visibility = View.GONE
+//                binding.rvBookmarkedArticles.visibility = View.VISIBLE
+
+//                binding.rvBookmarkedArticles.adapter = BookmarkAdapter(bookmarkList)
+            }
+        }
         return root
     }
 

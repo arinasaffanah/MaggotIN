@@ -47,4 +47,16 @@
     <string name="onboarding_desc_1">Start your journey with MaggotIN that will help you with maggot cultivation every step of the way!</string>
     <string name="onboarding_desc_2">The image detection feature helps you treat maggots and get immediate treatment recommendations to ensure maggots stay healthy.</string>
     <string name="onboarding_desc_3">Utilize the MaggotIN feature and start treating your maggots today!</string>
+    <string name="empty_bookmark_image_desc">Ilustrasi kosong untuk bookmark</string>
+    <string name="empty_message">Kamu belum menyimpan artikel apapun</string>
+    <string name="stage">fase maggot</string>
+    <string name="title_stage">Fase :</string>
+    <string name="title_feed">Pakan :</string>
+    <string name="feed">rekomendasi makanan</string>
+    <string name="temperature">suhu</string>
+    <string name="title_temperature">Temperature :</string>
+    <string name="title_humidity">Kelembapan :</string>
+    <string name="humidity">tingkat kelembapan</string>
+    <string name="title_notes">Catatan Informasi :</string>
+    <string name="notes">informasi detail terhadap fase maggot saat ini</string>
 </resources>
