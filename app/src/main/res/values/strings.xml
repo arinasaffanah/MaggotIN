@@ -33,7 +33,7 @@
     <string name="camera">Camera</string>
     <string name="subtitle_camera">Identifikasi pertumbuhan maggot kamu sekarang!</string>
     <string name="save_bookmark">Save bookmark</string>
-    <string name="brief_desc">Brief description\n</string>
+    <string name="brief_desc">Brief description</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="articles">Yuk, tambah pengetahuan dengan literatur maggot dan pengelolaan sampah yang informatif!</string>
@@ -59,4 +59,5 @@
     <string name="humidity">tingkat kelembapan</string>
     <string name="title_notes">Catatan Informasi :</string>
     <string name="notes">informasi detail terhadap fase maggot saat ini</string>
+    <string name="published_date">Published Date</string>
 </resources>
