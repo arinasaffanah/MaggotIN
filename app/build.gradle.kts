@@ -72,7 +72,7 @@ dependencies {
 
 
     implementation(libs.glide)
-    kapt(libs.compiler)
+    ksp(libs.compiler)
 
     implementation(libs.androidx.room.ktx)
 

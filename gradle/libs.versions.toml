@@ -22,13 +22,14 @@ activity = "1.9.3"
 okhttp = "4.9.1"
 roomCommon = "2.6.1"
 ksp = "1.9.0-1.0.13"
+room = "2.5.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
-androidx-room-compiler = { module = "androidx.room:room-compiler" }
-androidx-room-runtime = { module = "androidx.room:room-runtime" }
-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room"}
+compiler = { module = "com.github.bumptech.glide:ksp", version.ref = "compiler" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
