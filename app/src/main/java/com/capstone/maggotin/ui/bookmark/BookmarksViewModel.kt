@@ -6,8 +6,19 @@ import androidx.lifecycle.ViewModel
 
 class BookmarksViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is bookmarks Fragment"
+//    private val _text = MutableLiveData<String>().apply {
+//        value = "This is bookmarks Fragment"
+//    }
+//    val text: LiveData<String> = _text
+
+    private val _bookmarkList = MutableLiveData<List<String>>()
+    val bookmarkList: LiveData<List<String>> = _bookmarkList
+
+    init {
+        _bookmarkList.value = emptyList()
     }
-    val text: LiveData<String> = _text
+
+    fun updateBookmarks(newBookmarks: List<String>) {
+        _bookmarkList.value = newBookmarks
+    }
 }

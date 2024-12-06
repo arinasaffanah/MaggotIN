@@ -1,5 +1,6 @@
 package com.capstone.maggotin.ui.camera
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -41,6 +42,7 @@ class CameraFragment : Fragment() {
 
         binding.galleryButton.setOnClickListener{ startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }
+        binding.analyzeButton.setOnClickListener{ showResult() }
         return root
     }
 
@@ -79,6 +81,11 @@ class CameraFragment : Fragment() {
             Log.d("Image URI", "showImage: $it")
             binding.previewImageView.setImageURI(it)
         }
+    }
+
+    private fun showResult(){
+        val intent = Intent(requireContext(), ResultActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onDestroyView() {
