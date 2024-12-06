@@ -75,6 +75,10 @@ class ArticleRepository(
         return articleDao.getBookmarkedArticles()
     }
 
+    suspend fun updateBookmarkStatus(articleId: Int, status: Boolean) {
+        articleDao.updateBookmarkStatusById(articleId, status)
+    }
+
     fun setBookmarkedArticle(article: ArticlesEntity, bookmarkState: Boolean) {
         appExecutors.diskIO.execute {
             article.isBookmarked = bookmarkState

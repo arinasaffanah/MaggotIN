@@ -2,6 +2,7 @@ package com.capstone.maggotin.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -64,6 +65,9 @@ class HomeFragment : Fragment() {
     private fun setupRecyclerView() {
         articleAdapter = ArticleAdapter { article ->
             Toast.makeText(requireContext(), "Clicked on ${article.title}", Toast.LENGTH_SHORT).show()
+            val newBookmarkState = article.isBookmarked
+            viewModel.setBookmarkedArticle(article, newBookmarkState)
+            Log.d("Bookmark", "Article bookmarked: ${article.title} - ${article.isBookmarked}")
         }
         binding.rvArticles.apply {
             layoutManager = LinearLayoutManager(requireContext())

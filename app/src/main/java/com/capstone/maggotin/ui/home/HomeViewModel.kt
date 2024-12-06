@@ -9,6 +9,7 @@ import com.capstone.maggotin.data.ResultArticle
 import com.capstone.maggotin.data.UserRepository
 import com.capstone.maggotin.data.local.entity.ArticlesEntity
 import com.capstone.maggotin.data.pref.UserModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
@@ -32,6 +33,7 @@ class HomeViewModel(
     // Fungsi untuk bookmark artikel
     fun setBookmarkedArticle(article: ArticlesEntity, bookmarkState: Boolean) {
         viewModelScope.launch {
+//            article.isBookmarked = bookmarkState
             articleRepository.setBookmarkedArticle(article, bookmarkState)
         }
     }
@@ -39,5 +41,15 @@ class HomeViewModel(
     // Mendapatkan artikel yang sudah di-bookmark
     fun getBookmarkedArticles(): LiveData<List<ArticlesEntity>> {
         return articleRepository.getBookmarkedArticles()
+    }
+
+    fun updateBookmarkStatus(article: ArticlesEntity) {
+        // Menambahkan logika untuk toggle bookmark status
+        viewModelScope.launch(Dispatchers.IO) {
+            val updatedStatus = !article.isBookmarked
+            article.isBookmarked = updatedStatus
+            articleRepository.updateBookmarkStatus(article.id, updatedStatus)
+        }
+          // Memperbarui status bookmark berdasarkan ID
     }
 }

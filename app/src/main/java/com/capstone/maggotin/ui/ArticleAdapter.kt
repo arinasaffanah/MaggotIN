@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.capstone.maggotin.R
 import com.capstone.maggotin.data.local.entity.ArticlesEntity
-import com.capstone.maggotin.data.remote.response.ArticleItem
 import com.capstone.maggotin.databinding.ItemArticlesBinding
+import com.capstone.maggotin.utils.DateFormatter
 
 class ArticleAdapter(private val onBookmarkClick: (ArticlesEntity) -> Unit) :
     ListAdapter<ArticlesEntity, ArticleAdapter.ArticleViewHolder>(ArticleDiffCallback()) {
@@ -27,12 +27,15 @@ class ArticleAdapter(private val onBookmarkClick: (ArticlesEntity) -> Unit) :
         holder.bind(article)
 
         val ivBookmark = holder.binding.ivBookmark
+
         if (article.isBookmarked) {
             ivBookmark.setImageDrawable(ContextCompat.getDrawable(ivBookmark.context, R.drawable.ic_bookmarked))
         } else {
             ivBookmark.setImageDrawable(ContextCompat.getDrawable(ivBookmark.context, R.drawable.ic_bookmarks))
         }
+
         ivBookmark.setOnClickListener {
+            article.isBookmarked = !article.isBookmarked
             onBookmarkClick(article)
         }
 
@@ -49,11 +52,13 @@ class ArticleAdapter(private val onBookmarkClick: (ArticlesEntity) -> Unit) :
         fun bind(article: ArticlesEntity) {
             Glide.with(binding.imgPoster.context)
                 .load(article.image)
+                .placeholder(R.drawable.ic_load)
+                .error(R.drawable.ic_image_broken)
                 .into(binding.imgPoster)
 
             binding.tvItemTitle.text = article.title
             binding.tvDesc.text = article.description
-            binding.tvItemPublishedDate.text = article.date
+            binding.tvItemPublishedDate.text = DateFormatter.formatDate(article.date)
 
             binding.root.setOnClickListener {
                 onBookmarkClick(article)

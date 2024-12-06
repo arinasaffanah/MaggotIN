@@ -30,4 +30,7 @@ interface ArticlesDao {
     // Check if a specific article is bookmarked based on its title
     @Query("SELECT EXISTS(SELECT 1 FROM articles WHERE title = :title AND is_bookmarked = 1)")
     fun isArticleBookmarked(title: String): Boolean
+
+    @Query("UPDATE articles SET is_bookmarked = :status WHERE id = :articleId")
+    suspend fun updateBookmarkStatusById(articleId: Int, status: Boolean)
 }
