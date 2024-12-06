@@ -27,13 +27,11 @@
             android:noHistory="true" />
         <activity
             android:name=".ui.signup.SignupActivity"
-            android:exported="false"
-            android:launchMode="singleTask"
-            android:noHistory="true" />
+            android:exported="false"/>
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:noHistory="true" />
+            android:launchMode="singleTask"/>
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">

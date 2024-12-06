@@ -9,6 +9,7 @@
     <!--  Authentication  -->
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="password_confirm">Confirm Password</string>
 
     <!--  Login  -->
     <string name="title_login_page">Ready to see the Maggot?</string>

@@ -8,8 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:paddingBottom="16dp">
+        android:padding="16dp"
+        app:layout_constraintVertical_bias="0.5">
 
         <TextView
             android:id="@+id/titleTextView"
@@ -182,6 +182,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/loginRedirect"
             app:layout_constraintStart_toEndOf="@+id/loginRedirect"
             tools:layout_editor_absoluteX="191dp" />
+
 
         <ProgressBar
             android:id="@+id/progressBar"
