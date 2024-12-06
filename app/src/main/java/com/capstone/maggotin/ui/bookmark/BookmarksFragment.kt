@@ -1,6 +1,7 @@
 package com.capstone.maggotin.ui.bookmark
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,9 +63,10 @@ class BookmarksFragment : Fragment() {
 
     private fun setupRecyclerView() {
         bookmarkedAdapter = ArticleAdapter { article ->
-            // Handle click on bookmarked article (if needed)
-            viewModel.updateBookmarkStatus(article)
-            Toast.makeText(requireContext(), "Clicked on ${article.title}", Toast.LENGTH_SHORT).show()
+            val newBookmarkState = article.isBookmarked
+            viewModel.updateBookmarkStatus(article, newBookmarkState)
+            Toast.makeText(requireContext(), "Unbookmarked ${article.title}", Toast.LENGTH_SHORT).show()
+            Log.d("Unbookmarked", "Article unbookmarked: ${article.title} - ${article.isBookmarked}")
         }
 
         binding.rvBookmarkedArticles.apply {

@@ -43,12 +43,12 @@ class HomeViewModel(
         return articleRepository.getBookmarkedArticles()
     }
 
-    fun updateBookmarkStatus(article: ArticlesEntity) {
+    fun updateBookmarkStatus(article: ArticlesEntity, bookmarkState: Boolean) {
         // Menambahkan logika untuk toggle bookmark status
         viewModelScope.launch(Dispatchers.IO) {
             val updatedStatus = !article.isBookmarked
             article.isBookmarked = updatedStatus
-            articleRepository.updateBookmarkStatus(article.id, updatedStatus)
+            articleRepository.updateBookmarkStatus(article.id, bookmarkState)
         }
           // Memperbarui status bookmark berdasarkan ID
     }

@@ -45,6 +45,7 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         setupRecyclerView()
+        observeArticles()
 
         viewModel.getSession().observe(viewLifecycleOwner, Observer { user ->
             if (!user.isLogin) {
@@ -64,7 +65,7 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         articleAdapter = ArticleAdapter { article ->
-            Toast.makeText(requireContext(), "Clicked on ${article.title}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Bookmarked ${article.title}", Toast.LENGTH_SHORT).show()
             val newBookmarkState = article.isBookmarked
             viewModel.setBookmarkedArticle(article, newBookmarkState)
             Log.d("Bookmark", "Article bookmarked: ${article.title} - ${article.isBookmarked}")
