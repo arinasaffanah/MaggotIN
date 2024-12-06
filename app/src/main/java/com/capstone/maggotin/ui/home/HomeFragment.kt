@@ -56,10 +56,6 @@ class HomeFragment : Fragment() {
             }
         })
 
-//        binding.btnLogout.setOnClickListener {
-//            viewModel.logout()
-//        }
-
         return root
     }
 
@@ -77,7 +73,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeArticles() {
-        // Mengamati hasil pengambilan artikel dari ViewModel
         viewModel.getArticles().observe(viewLifecycleOwner, Observer { result ->
             when (result) {
                 is ResultArticle.Loading -> {

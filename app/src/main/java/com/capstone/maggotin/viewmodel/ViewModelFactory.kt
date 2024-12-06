@@ -35,7 +35,6 @@ class ViewModelFactory(
         fun getInstance(context: Context): ViewModelFactory {
             if (INSTANCE == null) {
                 synchronized(ViewModelFactory::class.java) {
-//                    INSTANCE = ViewModelFactory(Injection.provideRepository(context))
                     val userRepository = Injection.provideUserRepository(context)
                     val articleRepository = Injection.provideArticleRepository(context)
                     INSTANCE = ViewModelFactory(userRepository, articleRepository)

@@ -18,11 +18,8 @@ import com.capstone.maggotin.ui.home.HomeViewModel
 import com.dicoding.picodiploma.loginwithanimation.view.ViewModelFactory
 
 class BookmarksFragment : Fragment() {
-
     private var _binding: FragmentBookmarksBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private val viewModel by viewModels<HomeViewModel> { ViewModelFactory.getInstance(requireContext()) }
     private lateinit var bookmarkedAdapter: ArticleAdapter
@@ -32,32 +29,12 @@ class BookmarksFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val bookmarksViewModel =
-//            ViewModelProvider(this).get(BookmarksViewModel::class.java)
-
         _binding = FragmentBookmarksBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         setupRecyclerView()
         observeBookmarkedArticles()
 
-
-//        val textView: TextView = binding.textBookmarks
-//        bookmarksViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-
-//        bookmarksViewModel.bookmarkList.observe(viewLifecycleOwner) { bookmarkList ->
-//            if (bookmarkList.isEmpty()) {
-//                binding.emptyView.visibility = View.VISIBLE
-//                binding.rvBookmarkedArticles.visibility = View.GONE
-//            } else {
-////                binding.emptyView.visibility = View.GONE
-////                binding.rvBookmarkedArticles.visibility = View.VISIBLE
-//
-////                binding.rvBookmarkedArticles.adapter = BookmarkAdapter(bookmarkList)
-//            }
-//        }
         return root
     }
 

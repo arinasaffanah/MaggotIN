@@ -13,6 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.capstone.maggotin"
         minSdk = 24
+        //noinspection OldTargetApi
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -56,27 +57,22 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.play.services.base)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.dotsindicator)
 
-    //room
+    // room
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.compiler)
 
-    //retrofit
+    // api
     implementation (libs.retrofit  )
     implementation (libs.converter.gson)
     implementation (libs.okhttp3.okhttp)
     implementation (libs.logging.interceptor)
-
-
     implementation(libs.glide)
-    ksp(libs.compiler)
-
-    implementation(libs.androidx.room.ktx)
-
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-
 }

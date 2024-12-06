@@ -19,8 +19,6 @@ class CameraFragment : Fragment() {
 
     private var _binding: FragmentCameraBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private var currentImageUri: Uri? = null
 
@@ -34,11 +32,6 @@ class CameraFragment : Fragment() {
 
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-//        val textView: TextView = binding.textCamera
-//        cameraViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
 
         binding.galleryButton.setOnClickListener{ startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }

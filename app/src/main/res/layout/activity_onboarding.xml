@@ -16,7 +16,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="80dp"
-        app:dotsColor="@color/green_300"
+        app:dotsColor="@color/green_500"
         app:selectedDotColor="@color/green_700" />
 
     <Button

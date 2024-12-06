@@ -21,7 +21,6 @@ class ArticleRepository(
     fun getArticles(): LiveData<ResultArticle<List<ArticlesEntity>>> {
         result.value = ResultArticle.Loading
 
-        // Call the API to fetch articles
         val client = apiService.getArticles()
         client.enqueue(object : Callback<ArticleResponse> {
             override fun onResponse(call: Call<ArticleResponse>, response: Response<ArticleResponse>) {
@@ -29,7 +28,6 @@ class ArticleRepository(
                     val articles = response.body()?.data
                     val articleList = ArrayList<ArticlesEntity>()
 
-                    // Save to database
                     appExecutors.diskIO.execute {
                         articles?.forEach { article ->
                             val isBookmarked = articleDao.isArticleBookmarked(article.title)

@@ -30,26 +30,21 @@ class HomeViewModel(
         }
     }
 
-    // Fungsi untuk bookmark artikel
     fun setBookmarkedArticle(article: ArticlesEntity, bookmarkState: Boolean) {
         viewModelScope.launch {
-//            article.isBookmarked = bookmarkState
             articleRepository.setBookmarkedArticle(article, bookmarkState)
         }
     }
 
-    // Mendapatkan artikel yang sudah di-bookmark
     fun getBookmarkedArticles(): LiveData<List<ArticlesEntity>> {
         return articleRepository.getBookmarkedArticles()
     }
 
     fun updateBookmarkStatus(article: ArticlesEntity, bookmarkState: Boolean) {
-        // Menambahkan logika untuk toggle bookmark status
         viewModelScope.launch(Dispatchers.IO) {
             val updatedStatus = !article.isBookmarked
             article.isBookmarked = updatedStatus
             articleRepository.updateBookmarkStatus(article.id, bookmarkState)
         }
-          // Memperbarui status bookmark berdasarkan ID
     }
 }
