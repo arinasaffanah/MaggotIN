@@ -2,10 +2,14 @@ package com.capstone.maggotin.data
 
 import com.capstone.maggotin.data.pref.UserModel
 import com.capstone.maggotin.data.pref.UserPreference
+import com.capstone.maggotin.data.remote.response.RegisterRequest
+import com.capstone.maggotin.data.remote.response.RegisterResponse
+import com.capstone.maggotin.data.remote.retrofit.ApiService
 import kotlinx.coroutines.flow.Flow
 
 class UserRepository private constructor(
-    private val userPreference: UserPreference
+    private val userPreference: UserPreference,
+    private val apiService: ApiService
 ) {
 
     suspend fun saveSession(user: UserModel) {
@@ -16,6 +20,10 @@ class UserRepository private constructor(
         return userPreference.getSession()
     }
 
+    suspend fun registerUser(request: RegisterRequest): RegisterResponse {
+        return apiService.register(request)
+    }
+
     suspend fun logout() {
         userPreference.logout()
     }
@@ -24,10 +32,11 @@ class UserRepository private constructor(
         @Volatile
         private var instance: UserRepository? = null
         fun getInstance(
-            userPreference: UserPreference
+            userPreference: UserPreference,
+            apiService: ApiService
         ): UserRepository =
             instance ?: synchronized(this) {
-                instance ?: UserRepository(userPreference)
+                instance ?: UserRepository(userPreference, apiService)
             }.also { instance = it }
     }
 }
