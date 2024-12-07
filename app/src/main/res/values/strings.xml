@@ -72,4 +72,14 @@
     <!--  Error Handling  -->
     <string name="empty_column">Semua kolom harus diisi!</string>
     <string name="success_registration">Registrasi berhasil. Silakan login.</string>
+    <string name="empty_email">Email tidak boleh kosong</string>
+    <string name="empty_password">Kata sandi tidak boleh kosong</string>
+    <string name="input_email">Masukkan email</string>
+    <string name="input_password">Masukkan password</string>
+    <string name="try_again">Coba Lagi</string>
+    <string name="next">Lanjut</string>
+    <string name="login_success">Login Sukses</string>
+    <string name="login_success_message">Selamat datang, %1$s</string>
+    <string name="login_failed">Login Gagal</string>
+    <string name="login_failed_message">Login gagal, silakan coba lagi.</string>
 </resources>

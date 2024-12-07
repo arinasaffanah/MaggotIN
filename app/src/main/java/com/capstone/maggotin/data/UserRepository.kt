@@ -2,6 +2,8 @@ package com.capstone.maggotin.data
 
 import com.capstone.maggotin.data.pref.UserModel
 import com.capstone.maggotin.data.pref.UserPreference
+import com.capstone.maggotin.data.remote.response.LoginRequest
+import com.capstone.maggotin.data.remote.response.LoginResponse
 import com.capstone.maggotin.data.remote.response.RegisterRequest
 import com.capstone.maggotin.data.remote.response.RegisterResponse
 import com.capstone.maggotin.data.remote.retrofit.ApiService
@@ -18,6 +20,11 @@ class UserRepository private constructor(
 
     fun getSession(): Flow<UserModel> {
         return userPreference.getSession()
+    }
+
+    suspend fun loginUser(email: String, password: String): LoginResponse {
+        val request = LoginRequest(email = email, password = password)
+        return apiService.login(request)
     }
 
     suspend fun registerUser(request: RegisterRequest): RegisterResponse {

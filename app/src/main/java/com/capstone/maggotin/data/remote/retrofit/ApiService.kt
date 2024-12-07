@@ -1,6 +1,8 @@
 package com.capstone.maggotin.data.remote.retrofit
 
 import com.capstone.maggotin.data.remote.response.ArticleResponse
+import com.capstone.maggotin.data.remote.response.LoginRequest
+import com.capstone.maggotin.data.remote.response.LoginResponse
 import com.capstone.maggotin.data.remote.response.RegisterRequest
 import com.capstone.maggotin.data.remote.response.RegisterResponse
 import retrofit2.Call
@@ -15,4 +17,10 @@ interface ApiService {
     suspend fun register(
         @Body requestBody: RegisterRequest
     ): RegisterResponse
+
+    @Headers("Content-Type: application/json")
+    @POST("users/login")
+    suspend fun login(
+        @Body loginRequest: LoginRequest
+    ): LoginResponse
 }
