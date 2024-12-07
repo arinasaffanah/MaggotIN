@@ -1,7 +1,6 @@
 package com.capstone.maggotin.ui
 
 import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -12,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.capstone.maggotin.R
 import com.capstone.maggotin.data.local.entity.ArticlesEntity
 import com.capstone.maggotin.databinding.ItemArticlesBinding
+import com.capstone.maggotin.ui.article.DetailArticleActivity
 import com.capstone.maggotin.utils.DateFormatter
 
 class ArticleAdapter(private val onBookmarkClick: (ArticlesEntity) -> Unit) :
@@ -41,7 +41,8 @@ class ArticleAdapter(private val onBookmarkClick: (ArticlesEntity) -> Unit) :
 
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(article.linkArticle))
+            val intent = Intent(context, DetailArticleActivity::class.java)
+            intent.putExtra("URL", article.linkArticle)
             context.startActivity(intent)
         }
     }
