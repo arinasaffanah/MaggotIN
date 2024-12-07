@@ -69,5 +69,7 @@
     <string name="classification_image_description">Image Classification</string>
     <string name="splash_icon_description">Maggot Image</string>
 
-
+    <!--  Error Handling  -->
+    <string name="empty_column">Semua kolom harus diisi!</string>
+    <string name="success_registration">Registrasi berhasil. Silakan login.</string>
 </resources>
