@@ -12,17 +12,15 @@ import com.capstone.maggotin.utils.AppExecutors
 object Injection {
     fun provideUserRepository(context: Context): UserRepository {
         val pref = UserPreference.getInstance(context.dataStore)
-        val apiService = ApiConfig.getApiService()
+        val apiService = ApiConfig.getMaggotinApiService()
         return UserRepository.getInstance(pref, apiService)
     }
 
     fun provideArticleRepository(context: Context): ArticleRepository {
-        val apiService = ApiConfig.getApiService()
+        val apiService = ApiConfig.getMaggotinApiService()
         val database = ArticlesDatabase.getInstance(context)
         val dao = database.articlesDao()
         val appExecutors = AppExecutors()
         return ArticleRepository.getInstance(apiService, dao, appExecutors)
     }
-
-
 }

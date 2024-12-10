@@ -75,4 +75,5 @@ dependencies {
     implementation (libs.okhttp3.okhttp)
     implementation (libs.logging.interceptor)
     implementation(libs.glide)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 }

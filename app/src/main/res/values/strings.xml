@@ -53,21 +53,21 @@
     <string name="empty_bookmark_image_desc">Ilustrasi kosong untuk bookmark</string>
     <string name="empty_message">Kamu belum menyimpan artikel apapun</string>
 
-    <!--  Classification Result  -->
-    <string name="stage">fase maggot</string>
-    <string name="title_stage">Fase :</string>
-    <string name="title_feed">Pakan :</string>
-    <string name="feed">rekomendasi makanan</string>
-    <string name="temperature">suhu</string>
-    <string name="title_temperature">Temperature :</string>
-    <string name="title_humidity">Kelembapan :</string>
-    <string name="humidity">tingkat kelembapan</string>
-    <string name="title_notes">Catatan Informasi :</string>
-    <string name="notes">informasi detail terhadap fase maggot saat ini</string>
-    <string name="published_date">Published Date</string>
-    <string name="login_icon_description">Login icon</string>
-    <string name="classification_image_description">Image Classification</string>
-    <string name="splash_icon_description">Maggot Image</string>
+    <!-- Classification Result -->
+    <string name="stage">Fase Maggot</string>
+    <string name="title_stage">Fase:</string>
+    <string name="title_feed">Pakan:</string>
+    <string name="feed">Rekomendasi makanan</string>
+    <string name="duration">Suhu</string>
+    <string name="title_duration">Durasi:</string>
+    <string name="title_evaluation">Evaluasi:</string>
+    <string name="evaluation">Tingkat kelembapan</string>
+    <string name="title_notes">Lakukan:</string>
+    <string name="notes">Informasi detail terhadap fase maggot saat ini</string>
+    <string name="published_date">Tanggal Terbit</string>
+    <string name="login_icon_description">Ikon Login</string>
+    <string name="classification_image_description">Gambar Klasifikasi</string>
+    <string name="splash_icon_description">Gambar Maggot</string>
 
     <!--  Error Handling  -->
     <string name="empty_column">Semua kolom harus diisi!</string>
@@ -82,4 +82,45 @@
     <string name="login_success_message">Selamat datang, %1$s</string>
     <string name="login_failed">Login Gagal</string>
     <string name="login_failed_message">Login gagal, silakan coba lagi.</string>
+    <string name="error_message_placeholder">Identification not valid!</string>    <string name="unknown_phase">Unknown Phase</string>
+    <string name="n_a">N/A</string>
+    <string name="no_evaluation_available">No evaluation available</string>
+    <string name="no_action_available">No action available</string>
+    <string name="unknown_error">Unknown Error</string>
+
+    <!-- Larva Phase 1 -->
+    <string name="larva_phase_1_recommendation">Limbah organik lembut (contoh: bubur nasi, kulit buah busuk, sayur lembut) dengan kelembapan tinggi (60-70%).</string>
+    <string name="larva_phase_1_duration">2-3 hari pada suhu ideal 27-30°C.</string>
+    <string name="larva_phase_1_evaluation">Larva aktif menunjukkan pakan sesuai; hindari pakan keras/kering.</string>
+    <string name="larva_phase_1_action">Siapkan pakan lembut dan pastikan cukup lembap (tambahkan air jika perlu). Aduk media setiap 12 jam untuk distribusi merata.</string>
+
+    <!-- Larva Phase 2 -->
+    <string name="larva_phase_2_recommendation">Limbah organik kasar (contoh: ampas sayur, kulit buah, dedak) dengan tambahan serat seperti serbuk gergaji.</string>
+    <string name="larva_phase_2_duration">3-5 hari, tergantung kondisi lingkungan.</string>
+    <string name="larva_phase_2_evaluation">Pantau pertumbuhan (larva tumbuh 2-3 kali lipat). Hindari bau menyengat berlebihan.</string>
+    <string name="larva_phase_2_action">Tambahkan pakan kasar dan ganti setiap 2 hari jika hampir habis. Pastikan media tetap terurai tanpa terlalu kering.</string>
+
+    <!-- Larva Phase 3 -->
+    <string name="larva_phase_3_recommendation">Limbah organik padat (contoh: ampas tahu, limbah dapur). Tingkatkan volume pakan karena konsumsi memuncak.</string>
+    <string name="larva_phase_3_duration">3-7 hari, tergantung suhu dan ketersediaan pakan.</string>
+    <string name="larva_phase_3_evaluation">Larva kurang aktif/ukuran stagnan menandakan pakan kurang bergizi atau mendekati fase prepupa.</string>
+    <string name="larva_phase_3_action">Tingkatkan jumlah pakan. Pisahkan larva yang sudah besar untuk panen. Kontrol kelembapan agar tidak basah atau berlumpur.</string>
+
+    <!-- Maggot Pre-Prepupa -->
+    <string name="maggot_pre_pupa_recommendation">Limbah kaya protein (contoh: ampas kelapa, tepung ikan).</string>
+    <string name="maggot_pre_pupa_duration">1-2 hari hingga larva menggelap dan mengurangi aktivitas makan.</string>
+    <string name="maggot_pre_pupa_evaluation">Larva mulai menjauh dari pakan menandakan siap ke fase prepupa.</string>
+    <string name="maggot_pre_pupa_action">Berikan pakan terakhir kaya protein. Sediakan media kering (sekam padi) agar prepupa berpindah secara alami.</string>
+
+    <!-- Prepupa -->
+    <string name="prepupa_recommendation">Tidak perlu pakan, hanya media kering seperti sekam padi atau tanah lembut.</string>
+    <string name="prepupa_duration">2-3 hari hingga prepupa berubah menjadi pupa.</string>
+    <string name="prepupa_evaluation">Pastikan lingkungan tetap kering untuk mencegah kematian prepupa.</string>
+    <string name="prepupa_action">Tempatkan prepupa di media kering untuk proses transformasi.</string>
+
+    <!-- Pupa -->
+    <string name="pupa_recommendation">Tidak membutuhkan pakan.</string>
+    <string name="pupa_duration">7-14 hari hingga berubah menjadi lalat dewasa.</string>
+    <string name="pupa_evaluation">Pupa sehat berwarna coklat gelap/hitam; hindari kelembapan berlebih.</string>
+    <string name="pupa_action">Simpan di tempat teduh, kering, dan bersih. Pisahkan pupa mati untuk mencegah kontaminasi.</string>
 </resources>

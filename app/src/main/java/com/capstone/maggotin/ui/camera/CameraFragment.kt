@@ -1,5 +1,6 @@
 package com.capstone.maggotin.ui.camera
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,12 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.maggotin.databinding.FragmentCameraBinding
 import com.capstone.maggotin.utils.CameraUtils.getImageUri
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
 
 class CameraFragment : Fragment() {
 
@@ -35,7 +40,7 @@ class CameraFragment : Fragment() {
 
         binding.galleryButton.setOnClickListener{ startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }
-        binding.analyzeButton.setOnClickListener{ showResult() }
+        binding.analyzeButton.setOnClickListener{ startAnalize() }
         return root
     }
 
@@ -76,13 +81,30 @@ class CameraFragment : Fragment() {
         }
     }
 
-    private fun showResult(){
-        val intent = Intent(requireContext(), ResultActivity::class.java)
-        startActivity(intent)
+    private fun startAnalize(){
+        currentImageUri?.let { uri ->
+            val imageFile = uriToFile(uri, requireContext())
+            val intent = Intent(requireContext(), ResultActivity::class.java)
+            intent.putExtra("imageFilePath", imageFile.absolutePath)
+            startActivity(intent)
+        } ?: run {
+            Toast.makeText(requireContext(), "No image selected!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun uriToFile(uri: Uri, context: Context): File {
+        val contentResolver = context.contentResolver
+        val tempFile = File.createTempFile("image", ".jpg", context.cacheDir)
+        tempFile.outputStream().use { outputStream ->
+            contentResolver.openInputStream(uri)?.use { inputStream ->
+                inputStream.copyTo(outputStream)
+            }
+        }
+        return tempFile
     }
 }

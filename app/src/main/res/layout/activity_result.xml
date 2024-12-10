@@ -67,17 +67,17 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/title_temperature"
+            android:text="@string/title_duration"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/result_temperature"
+            android:id="@+id/result_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/temperature" />
+            android:text="@string/duration" />
 
         <TextView
             android:layout_width="match_parent"
@@ -85,17 +85,17 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/title_humidity"
+            android:text="@string/title_evaluation"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/result_humidity"
+            android:id="@+id/evaluation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/humidity" />
+            android:text="@string/evaluation" />
 
         <TextView
             android:layout_width="match_parent"
@@ -113,7 +113,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/notes" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#FF0000"
+            android:visibility="gone"
+            android:text="@string/error_message_placeholder"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </ScrollView>
