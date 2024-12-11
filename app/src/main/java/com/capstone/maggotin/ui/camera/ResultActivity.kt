@@ -1,8 +1,10 @@
 package com.capstone.maggotin.ui.camera
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +34,12 @@ class ResultActivity : AppCompatActivity() {
         val factory = ResultViewModelFactory(repository)
         viewModel = ViewModelProvider(this, factory)[ResultViewModel::class.java]
 
+        val progressBar = findViewById<ProgressBar>(R.id.progress_bar)
+        val mainContent = findViewById<View>(R.id.main_content)
+
+        mainContent.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
+
         val filePath = intent.getStringExtra("imageFilePath")
         if (filePath != null) {
             val file = File(filePath)
@@ -49,7 +57,16 @@ class ResultActivity : AppCompatActivity() {
 
         viewModel.uploadResult.observe(this) { response ->
             handleApiResponse(response)
+            progressBar.visibility = View.GONE
+            mainContent.visibility = View.VISIBLE
         }
+
+        binding.backToAnalyzeButton.setOnClickListener { backToAnalyze() }
+    }
+
+    private fun backToAnalyze() {
+        super.finish()
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
     }
 
     private fun createImagePart(filePath: String): MultipartBody.Part {
@@ -58,6 +75,7 @@ class ResultActivity : AppCompatActivity() {
         return MultipartBody.Part.createFormData("image", file.name, requestFile)
     }
 
+    @SuppressLint("SetTextI18n", "DefaultLocale")
     private fun handleApiResponse(response: ClassifyResponse) {
         val errorMessageView = findViewById<TextView>(R.id.error_message)
 

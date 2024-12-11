@@ -123,4 +123,6 @@
     <string name="pupa_duration">7-14 hari hingga berubah menjadi lalat dewasa.</string>
     <string name="pupa_evaluation">Pupa sehat berwarna coklat gelap/hitam; hindari kelembapan berlebih.</string>
     <string name="pupa_action">Simpan di tempat teduh, kering, dan bersih. Pisahkan pupa mati untuk mencegah kontaminasi.</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="back_to_analyze">Back to Analyze</string>
 </resources>
